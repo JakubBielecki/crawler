@@ -6,19 +6,20 @@
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>Crawler</title>
+    <title>Crawler - results</title>
 </h:head>
 
 <h:body>
-    <h:form id="url-form">
+    <h:form id="result-form">
+        <f:metadata>
+            <f:viewParam name="url" value="#{resultView.url}" />
+        </f:metadata>
         <p:messages id="messages" showDetail="true" closable="true">
-        <p:autoUpdate/>
+            <p:autoUpdate/>
         </p:messages>
         <p:panel id="panel" header="Please provide URL:">
-            <h:inputText value="${startView.url}" />
-            <h:commandButton value="submit" action="#{startView.submit}" />
+            <h:outputText value="${resultView.url}" />
         </p:panel>
-
     </h:form>
 </h:body>
 </html>
