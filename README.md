@@ -11,6 +11,8 @@ How to build and run your solution
 
 -> type url and check progress and results on console or application.log file
 
+-> for test purposes please use some small domains or subdomains like: 'https://alkohole-domowe.com/wino', indexing big pages takes long time
+
 
 Expectations:
 
