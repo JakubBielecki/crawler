@@ -1,8 +1,8 @@
 package com.crawler.crawler.model;
 
 import javax.persistence.*;
-import java.net.URL;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "domain")
@@ -13,13 +13,23 @@ public class Domain {
     private Long id;
 
     @OneToMany(mappedBy="domain")
-    private List<Page> pages;
+    private Set<Page> pages;
 
     @OneToMany(mappedBy="domain")
-    private List<Image> images;
+    private Set<Image> images;
 
-    private URL url;
+    private String url;
 
+    public Domain(String url) {
+        this.url = url;
+        pages = new HashSet<>();
+        images = new HashSet<>();
+    }
+
+    public Domain() {
+        pages = new HashSet<>();
+        images = new HashSet<>();
+    }
 
     public Long getId() {
         return id;
@@ -29,27 +39,27 @@ public class Domain {
         this.id = id;
     }
 
-    public List<Page> getPages() {
+    public Set<Page> getPages() {
         return pages;
     }
 
-    public void setPages(List<Page> pages) {
+    public void setPages(Set<Page> pages) {
         this.pages = pages;
     }
 
-    public List<Image> getImages() {
+    public Set<Image> getImages() {
         return images;
     }
 
-    public void setImages(List<Image> images) {
+    public void setImages(Set<Image> images) {
         this.images = images;
     }
 
-    public URL getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 }

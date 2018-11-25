@@ -13,12 +13,13 @@
     <h:form id="result-form">
         <f:metadata>
             <f:viewParam name="url" value="#{resultView.url}" />
+            <f:event type="postAddToView" listener="#{resultView.init}" />
         </f:metadata>
         <p:messages id="messages" showDetail="true" closable="true">
             <p:autoUpdate/>
         </p:messages>
-        <p:panel id="panel" header="Please provide URL:">
-            <h:outputText value="${resultView.url}" />
+        <p:panel id="panel" header="Results:">
+            <h:outputText value="Check logs for result" />
         </p:panel>
     </h:form>
 </h:body>

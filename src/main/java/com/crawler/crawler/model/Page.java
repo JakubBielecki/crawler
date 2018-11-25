@@ -16,6 +16,14 @@ public class Page {
 
     private String url;
 
+    public Page(Domain domain, String url) {
+        this.domain = domain;
+        this.url = url;
+    }
+
+    public Page() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,5 +46,10 @@ public class Page {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public int hashCode() {
+        return url.hashCode();
     }
 }

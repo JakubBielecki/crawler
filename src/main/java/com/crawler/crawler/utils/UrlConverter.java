@@ -20,8 +20,7 @@ public class UrlConverter implements Converter {
 
         try {
             return new URL(value);
-        }
-        catch (MalformedURLException e) {
+        } catch (MalformedURLException e) {
             throw new ConverterException(new FacesMessage(String.format("Cannot convert %s to URL", value)), e);
         }
     }

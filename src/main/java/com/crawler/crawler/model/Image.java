@@ -19,6 +19,14 @@ public class Image {
         return id;
     }
 
+    public Image(Domain domain, String url) {
+        this.domain = domain;
+        this.url = url;
+    }
+
+    public Image() {
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -37,5 +45,10 @@ public class Image {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public int hashCode() {
+        return url.hashCode();
     }
 }
